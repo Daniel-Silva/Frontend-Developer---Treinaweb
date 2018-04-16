@@ -1,0 +1,54 @@
+<script type="text/javascript">
+
+    var agenda = {
+        nome: 'Agenda Pessoal',
+        contatos: [
+                
+        ],
+        adicionar: function(contato){
+            if(contato.nome && contato.telefone && contato.email){
+                this.contatos.push(contato);
+            }else{
+                console.log('Erro ao adicionar um novo contato.')
+            }
+        },
+        remover: function(nome){
+            for (indice in this.contatos){
+                var contato = this.contatos[indice];
+                if(contato.nome === nome){
+                    contato.nome.splice(indice,1);
+                    return true;
+                }
+            };
+            return false;
+        },
+        listar: function(){
+            for (indice in this.contatos){
+                var contato = this.contatos[indice]
+                if(contato.pagina){
+                    console.log(contato.nome+' '+contato.telefone+' '+contato.email+' '+contato.pagina);   
+                }else{
+                    console.log(contato.nome+' '+contato.telefone+' '+contato.email);
+                };
+            };  
+        },
+    };
+                                
+    agenda.adicionar(
+        {
+            nome: 'Daniel',
+            telefone: 1147494995,
+            email: 'dani3l.dxp@gmail.com',
+            pagina: 'http://www.danielfs.com.br'
+        });    
+    
+    agenda.adicionar(
+        {
+            nome: 'Flavia',
+            telefone: 1147495206,
+            email: 'flavia_silva_santos@outlook.com',
+        });
+    
+    agenda.listar();
+
+</script>

@@ -1,0 +1,18 @@
+<script type="text/javascript">
+
+var curso = {
+	nome: 'JavaScript',
+	ativo: true,
+	alunos: ['Andre', 'Joao'],
+	getAlunos: function(){
+		for(index in this.alunos){
+			console.log(this.alunos[index]);
+		}
+	}
+}
+
+for(chave in curso){
+	console.log(curso[chave]);
+}
+
+</script>

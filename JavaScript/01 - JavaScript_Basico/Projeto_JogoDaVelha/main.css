@@ -1,0 +1,99 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: .1em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html, body, main {
+    width: 100%;
+    height: 100%;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #007F7E;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+header h1 {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 3em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+/* SECTION */
+
+section {
+    width: 100%;
+    height: 83%;
+}
+
+section div {
+    width: 400px;
+    padding: 20px 0;
+    margin: 5px auto;
+    text-align: center;
+}
+
+
+/* TABLE */
+
+section table {
+    width: 400px;
+    height: 400px;
+    margin: 10px auto;
+    border: 2px solid #3C3C3C;
+}
+
+table tr, table tr td{
+    width: calc(100% / 3);
+    background-color: #F0F4F1;
+}
+
+table tr td:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+input {
+    width: 150px;
+    height: 40px;
+    margin: 10px calc((100% - 150px)/2);
+    border: none;
+    background-color: #007F7E;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+input:hover{
+    background-color: #95BCA7;
+}
+
+input:active{
+    box-shadow: none;
+}
+

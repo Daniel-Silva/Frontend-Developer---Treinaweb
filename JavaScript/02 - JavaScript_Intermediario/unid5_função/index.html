@@ -1,0 +1,151 @@
+<script>
+    
+        /*
+    var umaFuncao = function(callback){
+        callback();
+    }
+    
+    var Pessoa = function(){
+        this.quemSouEu = function(){
+            console.log(this)
+        }
+    }
+    
+    var daniel = new Pessoa();
+    
+    umaFuncao(daniel.quemSouEu);
+    
+    var outraFuncao = function(callback){
+        callback();
+    }
+    
+    var OutraPessoa = function(){
+        var that = this;
+        this.quemEuSou = function(){
+            console.log(that);
+        }
+    }
+    
+    var matheus = new OutraPessoa();
+    
+    outraFuncao(matheus.quemEuSou);
+    
+    var nome = function(){
+        var arg = Array.prototype.filter.call(arguments, function(valor){
+            return valor === 'Flávia';
+        });
+        console.log(arg);
+    }
+    
+    nome('Daniel', 'Matheus', 'Flávia')
+    
+    
+    var somar = new Function('a','b', 'return a + b');
+    
+    console.log(somar(10, 15));
+    
+    // funções anônimas
+    (function(nome){
+        console.log(nome);
+    })('Daniel Silva')
+    
+
+    //Escopo de funções globais e locais
+    var nome = 'escopoGlobal';
+    var idade = 0;
+    var altura = 0;
+    var peso = 0;
+    
+    var pessoa1 = {
+        nome: 'Daniel',
+        idade: 30,
+        altura: 1.80,
+        peso: '86kg',
+    }
+    
+    var pessoa2 = {
+        nome: 'Matheus',
+        idade: 2,
+        altura: 0.70,
+        peso: '18kg'
+    }
+    
+    var descobrirCaracteristicas = function(){
+        console.log('nome: '+ this.nome);
+        console.log('idade: '+ this.idade);
+        console.log('altura: '+ this.altura);
+        console.log('peso: '+ this.peso);
+    }
+    
+    descobrirCaracteristicas();
+    descobrirCaracteristicas.call(pessoa1);
+    descobrirCaracteristicas.apply(pessoa2);
+
+
+    //exemplo de callback hell
+    var nome = function (callback){
+      console.log('Daniel');
+      callback();
+      return 'Retorno de Daniel';
+    };
+
+    var outroNome = function (callback, callback2){
+      console.log('Flávia');
+      callback(callback2);
+    };
+
+    var maisUmNome = function (fim){
+      console.log('Matheus');
+      console.log(fim);
+    };
+
+
+    nome(function(){
+      outroNome(maisUmNome,nome(function(){
+        outroNome(function(baz){
+          nome(function(){
+            outroNome(maisUmNome,'callback hell')
+          })
+          maisUmNome('callback hell');
+        },maisUmNome);
+      }));
+    });
+    */
+    
+  
+    
+    
+    // funções callbacks
+    var gerarRelatorio = function(saida){
+        var dados = 'Daniel Silva';
+        saida(dados);
+    }
+    
+    var imprimirNoTerminal = function(dados){
+        console.log(dados);
+    }
+    
+    var imprimirNaTela = function(dados){
+        document.write(dados);
+    }
+    
+    gerarRelatorio(imprimirNaTela);
+    gerarRelatorio(imprimirNoTerminal);
+    gerarRelatorio(function(dados){
+        alert(dados);
+    })
+
+    
+    // função callback
+    var nome = function(msg){
+      return msg;
+    }
+
+    var imprimirNome = function(callback){
+      console.log(callback('Daniel'));
+    }
+
+    imprimirNome(nome);
+    
+    
+</script>

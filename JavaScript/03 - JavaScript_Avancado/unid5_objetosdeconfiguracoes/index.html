@@ -1,0 +1,41 @@
+<script>
+
+    var cadastro = function(dados, sucesso, erro){
+        var usuarios = [];
+        if(dados){
+            usuarios.push(dados);
+            for(index in usuarios){
+                var dadosUser = usuarios[index];
+                if(dados.nome && dados.email){
+                    sucesso({
+                        nome: dados.nome,
+                        email: dados.email,
+                        idade: dados.idade
+                    })
+                }else{
+                    erro({
+                        mensagem: 'Erro ao cadastrar user'
+                    })
+                }
+            }
+        }
+    }
+    
+    
+    cadastro(
+        {
+            nome: 'Daniel Silva',
+            idade: 30,
+            senha: 123654,
+            email: 'dani3l.dxp@gmail.com'
+        },
+        function(user){
+            console.log(user);
+        },
+        function(erro){
+            console.log(erro.mensagem);
+        }
+    );
+
+    
+</script>

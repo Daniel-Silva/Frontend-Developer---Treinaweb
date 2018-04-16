@@ -1,0 +1,44 @@
+<script>
+
+    // Propriedades Públicas
+    
+    var pessoa = {
+        nome: 'Daniel Silva',
+        getNome: function(){
+            return this.nome;
+        }
+    }
+    
+    console.log(pessoa.nome);
+    console.log(pessoa.getNome());
+    
+    // Propriedades Privadas (Objeto Construtor)
+    
+    var Pessoa = function(){
+        nome = 'Flávia Silva';
+        this.getNome = function(){
+            return nome;
+        }
+    }
+    
+    var daniel = new Pessoa();
+    
+    console.log(daniel.nome);
+    console.log(daniel.getNome());
+    
+    
+    // Propriedades Privadas (Objeto Literal)
+    
+    var person = (function(){
+        var name = 'Jonathan';
+        return {
+            getName: function(){
+                return name;
+            }
+        }
+    })();
+
+    console.log(person.name);
+    console.log(person.getName());
+
+</script>

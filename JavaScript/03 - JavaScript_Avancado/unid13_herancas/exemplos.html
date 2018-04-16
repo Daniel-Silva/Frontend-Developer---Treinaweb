@@ -1,0 +1,33 @@
+<script>
+
+    var Pessoa = function(){}
+    
+    Pessoa.prototype.falar = function(msg){
+        console.log(msg)
+    }
+    
+    var Filho = function(){}
+    
+    Filho.prototype = new Pessoa();
+    
+    var daniel = new Filho();
+    
+    daniel.falar('Olá Mundo');
+    
+    
+    var Pai = function(nome){
+        this.nome = nome;
+    }
+    
+    Pai.prototype.falar = function(nome){
+        console.log(this.nome+":"+nome);
+    }
+    
+    var Filho = function(nome){
+        Pai.call(this, nome);
+    }
+    
+    var eu = new Filho('Daniel');
+    console.log(eu.nome)
+    
+</script>

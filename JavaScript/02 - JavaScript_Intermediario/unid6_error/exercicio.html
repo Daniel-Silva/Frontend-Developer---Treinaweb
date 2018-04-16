@@ -1,0 +1,47 @@
+<script>
+
+    var contas = [
+        
+        {
+            nome: 'Daniel Silva',
+            numero: 123475,
+            valor: 500.00
+        },
+        {
+            nome: 'Flávia Silva',
+            numero: 123479,
+            valor: 1000.00,
+        },
+        {
+            nome: 'Matheus Silva',
+            numero: 123478,
+            valor: 10000.00,
+        }
+    ]
+    
+    var saque = function(numero, valor){
+        for (index in contas){
+            var conta = contas[index];
+            if(conta.numero === numero){
+                console.log('Seja bem vindo '+conta.nome)
+                if(conta.valor >= valor){
+                    conta.valor -= valor;
+                    return 'Seu saque foi de R$'+valor+',00';
+                }else{
+                    throw new Error('Saldo insuficiente.')
+                }
+            }
+        };
+        
+        throw new Error('Conta '+ conta.numero + ' não encontrada')
+    };
+    
+    try{
+        console.log(saque(123478, 1100));    
+    }catch(e){
+        alert(e.message);
+    }
+    
+    
+
+</script>

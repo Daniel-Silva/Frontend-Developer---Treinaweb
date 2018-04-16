@@ -1,0 +1,28 @@
+<script>
+
+    var MYAPP = {        
+        models: {},
+        views: {},
+        controls: {},
+        utils: {}
+    }
+    
+    MYAPP.models.User = function(nome, email, sexo){
+        this.nome = nome;
+        this.email = email;
+        this.sexo = sexo;
+    }
+    
+    MYAPP.controls.userControl = (function(User){
+        var user = new User('Daniel', 'daniel_dxp@outlook.com', 'M');
+        console.log(user);
+        return {
+            user: user
+        }
+    })(MYAPP.models.User);
+    
+    console.log(MYAPP.controls.userControl.user);
+    
+    
+    
+</script>

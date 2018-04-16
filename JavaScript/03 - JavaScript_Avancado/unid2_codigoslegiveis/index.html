@@ -1,0 +1,58 @@
+<script>
+
+    // Modelo errado
+    
+    var atg = (function(){
+        var ar = function(b, a){
+            return b * a;
+        };
+        
+        var at = function(b, a){
+            return (b * a)/2;
+        };
+        
+        var ata = function(B, b, h){
+            return ((B + b) * h)/2;
+        }
+        
+        return {
+            ar: ar,
+            at: at,
+            ata: ata
+        }     
+    })()
+    
+    console.log(atg.ar(2, 3));
+    console.log(atg.at(3, 1.5));
+    console.log(atg.ata(6, 3, 1.5));
+    
+    // Modelo certo
+    
+    var area = (function(){
+        var retangulo = function(base, altura){
+            var area = base * altura;
+            return area;
+        }
+        
+        var triangulo = function(base, altura){
+            var area = (base * altura)/2;
+            return area;
+        }
+        
+        var trapezio = function(baseMaior, baseMenor, altura){
+            var area = ((baseMaior + baseMenor) * altura)/2;
+            return area;
+        }
+        
+        return {
+            retangulo: retangulo,
+            triangulo: triangulo,
+            trapezio: trapezio
+        }
+    })()
+    
+    console.log(area.retangulo(2,3));
+    console.log(area.triangulo(3, 1.5));
+    console.log(area.trapezio(6, 3, 1.5));
+
+</script>

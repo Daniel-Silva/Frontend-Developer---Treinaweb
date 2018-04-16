@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unidade 13 - EVENTOS</title>
+        <meta charset="utf-8">
+        
+        <style>
+            
+            input[type=text]{
+                margin: 0 calc((100% - 300px)/2);
+                border-style: none none solid;
+                width: 300px;
+                height: 40px;
+                outline: none;
+                border-bottom: 3px solid #CCC;
+                padding: 0 0 0 8px;
+                font-size: 1.1em;
+                transition: border .3s;
+                text-align: center;
+            }
+            
+            input[type=text]:focus{
+                border-color: #000;
+            }
+            
+            table {
+                margin: 30px auto;
+            }
+            
+            table thead {
+                background: #E0E0E0;
+                font-weight: 600;
+                text-align: center;
+                font-size: 14px;
+            }
+            
+            table thead tr th {
+                width: 20%;
+                margin: 0;
+                padding: 8px;
+            }
+            
+            tbody tr td {
+                padding: 3px;
+                border-bottom: 1px solid #757575;
+                text-align: center;
+                font-size: 12px;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+            
+            tbody tr:nth-child(even){
+                background-color: #EEEEFF;
+            }
+            
+            .invisible{
+                display: none;
+            }
+
+        </style>
+        
+    </head>
+    <body>
+    
+        <form>
+            <input type="text" id='pesquisa' placeholder="pesquisa">
+        </form>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Página</th>
+                </tr>            
+            </thead>
+            <tbody>
+                <tr id='tr'>
+                    <td class='info-nome'>Daniel Silva</td>
+                    <td>11 4749-4995</td>
+                    <td>daniel_dxp@outlook.com</td>
+                    <td>http://danielfs.com.br</td>
+                </tr>
+                <tr id='tr'>
+                    <td class='info-nome'>Flávia Silva</td>
+                    <td>11 4749-4995</td>
+                    <td>flavia_dxp@outlook.com</td>
+                    <td></td>
+                </tr>
+                <tr id='tr'>
+                    <td class='info-nome'>Matheus Silva</td>
+                    <td>11 4749-4995</td>
+                    <td>matheus_dxp@outlook.com</td>
+                    <td>http://matheusfs.com.br</td>
+                </tr>
+                <tr id='tr'>
+                    <td class='info-nome'>Douglas Costa</td>
+                    <td>11 4749-4995</td>
+                    <td>douglas.costa@outlook.com</td>
+                    <td>http://douglas.com.br</td>
+                </tr>
+                <tr id='tr'>
+                    <td class='info-nome'>Luciana Martins</td>
+                    <td>11 4749-4995</td>
+                    <td>lu-martins@outlook.com</td>
+                    <td></td>
+                </tr>
+                <tr id='tr'>
+                    <td class='info-nome'>Zobeida Almeida</td>
+                    <td>11 4749-4995</td>
+                    <td>zobeida_almeida@outlook.com</td>
+                    <td>http://zobeida_almeida.com.br</td>
+                </tr>
+            </tbody>        
+        </table>
+        
+    </body>
+    
+    <script>
+    
+       var filter = document.querySelector('#pesquisa');
+
+        filter.addEventListener('input', function(){
+
+            var contatos = document.querySelectorAll('#tr');
+
+
+            if (this.value.length > 0){
+                for(i = 0; i < contatos.length; i++){
+                    var contato = contatos[i];
+                    var getNome = contato.querySelector('.info-nome');
+                    var nome = getNome.textContent;
+                    var expressao = new RegExp(this.value, 'i');
+
+                    if (!expressao.test(nome)){
+                        contato.classList.add('invisible');
+                    }else{
+                        contato.classList.remove('invisible');
+                    }
+                } 
+            }else{
+                for(i = 0; i < contatos.length; i++){
+                    var pacientes = contatos[i];
+                    contato.classList.remove('invisible');
+                }
+            }
+
+        })
+                
+    </script>
+
+</html>

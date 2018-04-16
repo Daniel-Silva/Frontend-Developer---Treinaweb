@@ -1,0 +1,59 @@
+<script>
+
+    var Sandbox = function(){
+        var argumentsArray = Array.prototype.slice.call(arguments);
+        var callback = argumentsArray.pop();
+        var orderedModules = argumentsArray.pop();
+        
+        if(this instanceof Sandbox){
+            new Sandbox(orderedModules, callback);
+        }
+        
+        var modules = [];
+        for(index in orderedModules){
+            modules.push(Sandbox.modules[orderedModules[index]]);
+        }
+        
+        callback.apply(undefined, modules);
+    }
+    
+    Sandbox.modules = {}
+    
+    Sandbox.modules.cores = [
+        'Azul', 
+        'Marrom', 
+        'Verde', 
+        'Branco'
+    ];
+    
+    Sandbox(['cores'], function(cores){
+        Sandbox.modules.Pai = function(){
+            var cor = cores[Math.floor(Math.random() * cores.length)];
+            this.olho = cor;
+        }
+
+        Sandbox.modules.Mae = function(){
+            var cor = cores[Math.floor(Math.random() * cores.length)];
+            this.cabelo = cor;
+        }
+    })
+            
+    Sandbox(['Pai', 'Mae'], function(Pai, Mae){
+        Sandbox.modules.Filho = function(nome){
+            this.nome = nome;
+            Pai.call(this);
+            Mae.call(this);
+        }
+    })
+    
+    Sandbox(['Filho'], function(Filho){
+        console.log(new Filho('Matheus'))
+        console.log(new Filho('Flávia'))
+        console.log(new Filho('Daniel'))
+    })
+    
+    
+    
+    
+
+</script>

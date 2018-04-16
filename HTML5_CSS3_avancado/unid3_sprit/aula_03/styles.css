@@ -1,0 +1,10 @@
+.meu-icone{
+   height: 20px;
+   width: 20px;
+   background-image: url('meu_sprite.png');
+   background-repeat: no-repeat;
+}
+
+.estrela-vermelha{background-position:  0px 0;}
+.estrela-azul{background-position:  -20px 0;}
+.estrela-verde{background-position:  -40px 0;}

@@ -1,0 +1,5 @@
+div{
+	width: 100%;
+	height: 250px;
+	background: repeating-radial-gradient(red, green 25%);
+}

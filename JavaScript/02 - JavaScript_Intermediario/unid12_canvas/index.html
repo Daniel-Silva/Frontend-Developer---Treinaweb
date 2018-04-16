@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unidade 12 - CANVAS</title>
+        <meta charset="utf-8">
+        
+        <style>
+        
+            
+        </style>
+        
+    </head>
+    <body>
+    
+        <canvas id="meuCanvas" width="250px" height="250px" style="border: 2px solid #F00; margin: 0 calc((100% - 250px)/2)"></canvas>
+        
+    </body>
+    
+    <script>
+    
+        var canvas = document.getElementById('meuCanvas');        
+        var ctx = canvas.getContext('2d');
+        
+            
+        ctx.beginPath();
+        ctx.fillStyle = '#a5ccb9';
+        ctx.moveTo(125,10);
+        ctx.lineTo(10, 240);
+        ctx.lineTo(240, 240);
+        ctx.lineTo(125,10);
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.fillStyle = '#53646c';
+        ctx.moveTo(70,120);
+        ctx.lineTo(10,240);
+        ctx.lineTo(240,240);
+        ctx.lineTo(70,120);
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.fillStyle = '#97beac';
+        ctx.moveTo(195,150);
+        ctx.lineTo(10,240);
+        ctx.lineTo(240,240);
+        ctx.lineTo(195,150);
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.fillStyle = '#445157';
+        ctx.moveTo(146,174);
+        ctx.lineTo(10,240);
+        ctx.lineTo(240,240);
+        ctx.lineTo(146,174);
+        ctx.fill();
+        
+        
+                
+    </script>
+
+</html>

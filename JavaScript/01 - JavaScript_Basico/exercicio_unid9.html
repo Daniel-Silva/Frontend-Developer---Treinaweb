@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    var familia = [
+        {
+            nome: 'Daniel',
+            idade: 29,
+        },
+        { 
+            nome: 'Matheus',
+            idade: 1,
+        },
+        {
+            nome: 'Flávia',
+            idade: 23,
+        }
+
+    ]
+    
+    var verificarMaioridade = function(pessoa){
+        if(pessoa.idade >= 18){
+            console.log(pessoa.nome + ' é maior de idade');
+        }else{
+            console.log(pessoa.nome + ' é menor de idade');
+        }
+    }
+    
+    for (index in familia){
+        var pessoa = familia[index];
+        verificarMaioridade(pessoa)
+    }
+
+</script>

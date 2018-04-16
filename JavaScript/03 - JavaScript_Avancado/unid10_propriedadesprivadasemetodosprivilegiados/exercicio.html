@@ -1,0 +1,45 @@
+<script>
+
+    var User = function(dados){
+        var nome = dados.nome,
+            email = dados.email,
+            idade = dados.idade,
+            sexo = dados.sexo,
+            endereco = dados.endereco;
+        
+        this.getDescription = function(){
+            return nome.concat(' ', email, ' ', idade, ' ', sexo, ' ', endereco);
+        }
+    }
+    
+    var user = new User({
+        nome: 'Daniel',
+        email: 'dani3.dxp@gmail.com',
+        idade: 30,
+        sexo: 'Masculino',
+        endereco: 'Avenida 16'
+    });
+    
+    console.log(user.getDescription());
+    
+    
+    var Pessoa = function(){
+        var nome = 'Daniel Silva';
+        this.getNome = function(){
+            return nome;
+        }
+    }
+    
+    var daniel = new Pessoa();
+    
+    var meuNome = function(obj){
+        console.log('Meu nome é '+obj);
+    }
+    
+    meuNome(daniel.getNome());
+    
+
+
+    
+
+</script>

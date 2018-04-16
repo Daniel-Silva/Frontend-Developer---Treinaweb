@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Widgets</string>
+    <string name="txt_nome">Informe seu nome</string>
+    <string name="txt_btn_processar">Processar!</string>
+    <string name="txt_resultado">Seja bem-vindo: </string>
+</resources>

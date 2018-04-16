@@ -1,0 +1,51 @@
+<script>
+
+    var soma = function(valor1, valor2){
+        if (valor1 && valor2){
+            return valor1 + valor2;
+        }else if (valor1){
+            var oldValue = valor1;
+            return function(valor2){
+                return oldValue + valor2;
+            }
+        }
+    }
+    
+    var multiplicacao = function(valor1, valor2){
+        if (valor1 && valor2){
+            return valor1 * valor2;
+        }else if (valor1){
+            var oldValue = valor1;
+            return function(valor2){
+                return oldValue * valor2;
+            }
+        }
+    }
+    
+    var subtracao = function(valor1, valor2){
+        if (valor1 && valor2){
+            return valor1 - valor2;
+        }else if (valor1){
+            var oldValue = valor1;
+            return function(valor2){
+                return oldValue - valor2;
+            }
+        }
+    }
+    
+    var divisao = function(valor1, valor2){
+        if (valor1 && valor2){
+            return valor1 / valor2;
+        }else if (valor1){
+            var oldValue = valor1;
+            return function(valor2){
+                return oldValue / valor2;
+            }
+        }
+    }
+    
+   
+    
+
+
+</script>

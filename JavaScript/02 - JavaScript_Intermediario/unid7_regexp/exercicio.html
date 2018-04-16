@@ -1,0 +1,59 @@
+<script>
+
+    var agenda = {
+        nome: 'Contatos Pessoais',
+        contatos: [],
+        adicionar: function(contato){
+            var emailValido = /^(\w+[.-_]?)+@\w+.(\w+[.]?)+$/;
+            var telefoneValido = /^\d{5}-\d{4}$/;
+            if(contato.nome && telefoneValido.test(contato.telefone) && emailValido.test(contato.email)){
+                this.contatos.push(contato);
+            }else{
+                throw new  Error ('Erro ao adicionar um novo contato')
+            }
+        }, 
+        remover: function(nome){
+            for (index in this.contatos){
+                var contato = this.contatos[index];
+                if (contato.name === nome){
+                    this.contatos.splice(index, 1);
+                    return true;
+                }
+            }
+            throw new Error ('Erro ao remover contato');
+        },
+        listar: function(){
+            for (index in this.contatos){
+                var contato = this.contatos[index];
+                if(contato.pagina){
+                    console.log(contato.nome+' '+contato.telefone+' '+contato.email+' '+contato.pagina);
+                }else{
+                    console.log(contato.nome+' '+contato.telefone+' '+contato.email);
+                }
+            }
+        }
+    };
+    
+    try{
+        agenda.adicionar({
+            nome: 'Daniel Silva',
+            telefone: '98380-4055',
+            email: 'dani3l.dxp@gmail',
+            pagina: 'www.danielfs.com.br'
+        });
+        
+        agenda.adicionar({
+            nome: 'Matheus Silva',
+            telefone: '94749-4995',
+            email: 'matheus.silva@outlook.com',
+        });
+        
+        agenda.remover('Flávia')
+        
+    }catch(e){
+        alert(e.message);
+    }
+    
+    agenda.listar();
+
+</script>

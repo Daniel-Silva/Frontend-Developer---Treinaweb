@@ -1,0 +1,33 @@
+<script>
+
+    var MYAPP = {
+        controles: {},
+        modelos: {},
+        utils: {},
+    }
+    
+    MYAPP.utils.validador = (function(){
+        var isString = function(valor){
+            return typeof valor === 'string';
+        }
+        
+        return {
+            isString: isString,
+        }
+    })()
+    
+    MYAPP.modelos.User = function(nome){
+        this.nome = nome;
+    };
+    
+    MYAPP.controles.user = (function(User, validador){
+        var nome = 'Daniel Silva';
+        if(validador.isString(nome)){
+            var pessoa = new User(nome);
+            console.log(nome)
+        }else{
+            console.log('False')
+        }
+    })(MYAPP.modelos.User, MYAPP.utils.validador);
+
+</script>

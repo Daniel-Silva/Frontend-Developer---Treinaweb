@@ -1,0 +1,196 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+#header {
+    width: 100%;
+    display: inline-block;
+    background: #5C6BC0;
+    color: #FFF;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    
+    -webkit-text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+       -moz-text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+       -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#header div h1 {
+    display: inline-block;
+    width: 400px;
+    margin: 20px calc((100% - 400px)/2);
+}
+
+div.table-container {
+    overflow: auto;
+}
+
+div.table-container,
+div.form-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+div.text-control {
+    height: 60px;
+    padding: 0,2em;
+    font-size: 26px;
+    border-bottom: 1px solid #757575;
+    
+}
+
+#table-control,
+#form-control {
+    width: 100%;
+    margin: 15px 0;
+    padding: 0;
+}
+
+.thead-control {
+    background: #E0E0E0;
+    font-weight: 600;
+    text-align: center;
+    font-size: 14px;
+}
+
+.thead-control tr th {
+    width: 20%;
+    margin: 0;
+    padding: 8px;
+}
+
+#tbody-control tr td {
+    padding: 3px;
+    border-bottom: 1px solid #757575;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#tbody-control tr:nth-child(even){
+    background-color: #EEEEEE;
+}
+
+#tbody-control tr{
+    transition: all .2s;
+}
+
+#tbody-control tr:hover {
+    color: red;
+    
+     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.paciente-invalido{
+    background-color: #fe7575;
+}
+
+#input-peso, #input-altura, #input-gordura {
+    display: inline-block;
+    width: 32%;
+    margin-left: 6px;
+}
+
+.input-field label{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.input-field:first-child .form-control {
+    width: 100%;
+}
+
+.input-field .form-control {
+    border-style: none none solid;
+    border-color: #CCC;
+    width: 98%;
+    height: 30px;
+    outline: none;
+    padding: 0 0 0 8px;
+    
+    -webkit-transition: 0.5s;
+            transition: 0.5s;
+}
+
+input[type=text]:focus,
+input[type=number]:focus {
+    border-color: #000;
+}
+
+div.btn {
+    margin: 5px auto;
+    width: 150px;
+    height: 30px;
+    background: #33b5e5;
+    
+       
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+       -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+div.btn .btn-control {
+    border: none;
+    background: #33b5e5;
+    width: 90%;
+    height: 90%;
+    margin: 1% 5%;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    
+    -webkit-text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+       -moz-text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); 
+}
+
+div.btn .btn-control:active {
+    border: none;
+}
+
+#msg-erro--input {
+    color: red;
+    font-weight: 600;
+}
+
+.fadeOut {
+    opacity: 0;
+    transition: .7s;
+}
+
+.invisible{
+    display: none;
+}
+
+.filter {
+    margin: 10px 0 5px 0;
+    width: 300px;
+    height: 40px;
+    border-style: none none solid;
+    border-color: #CCC;
+    padding-left: 10px;
+    outline: none;
+    transition: all .5s;
+}
+
+.filter:focus {
+    border-style: none none solid;
+    border-color: #000;
+}
+
+
+

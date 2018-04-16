@@ -1,0 +1,20 @@
+<script type="text/javascript">
+
+
+    
+    var Pessoa = function (nome, idade){
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    var flavia = new Pessoa('Flávia', 24);
+    
+    var NovoContrutor = flavia.constructor;
+    
+    var daniel = new NovoContrutor('Daniel', 30)
+    
+    
+    console.log(daniel.constructor);
+    console.log(daniel)
+
+</script>

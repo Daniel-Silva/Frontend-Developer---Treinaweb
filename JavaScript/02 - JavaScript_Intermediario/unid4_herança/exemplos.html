@@ -1,0 +1,33 @@
+<script>
+    
+    var Caracteristicas = function(){
+        this.falar = function (msg) {
+            console.log(msg);
+        }
+    }
+    
+    var Pessoa = function(){}
+    
+    Pessoa.prototype = new Caracteristicas();
+    
+    var daniel = new Pessoa();
+    
+    daniel.falar('Olá Mundo')
+    
+    
+    var habilidades = {
+        fala: function(fala){
+            console.log(fala);
+        }
+    }
+    
+    var daniel = {};
+    daniel.__proto__ = habilidades;
+    
+    daniel.fala('Olá, meu nome é Daniel')
+    
+    var matheus = Object.create(habilidades, {nome:{value: 'Matheus'}});
+    
+    console.log(matheus.nome)
+
+</script>

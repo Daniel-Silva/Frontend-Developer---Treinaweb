@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Exemplo 1 - Transições</title>
+        
+        <style type="text/css">
+        
+            div {
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                border: 5px solid #000;
+                background-color: #F00;
+                width: 200px;
+                height: 100px;
+                
+                transition: all 1s;
+            }
+            
+            div:hover {
+                width: 300px;
+            }
+        
+        </style>
+        
+        
+    </head>
+    <body>
+        <div></div>
+        <script type="text/javascript">
+            
+            var element = document.getElementsByTagName('div')[0];
+                setInterval(()=>{
+                   element.style.backgroundColor = "blue";
+                },2000);
+
+                setTimeout(()=>{
+                   setInterval(()=>{
+                      element.style.backgroundColor = "red";
+                   },2000);
+                }, 1000);
+        
+        </script>
+    </body>
+
+</html>

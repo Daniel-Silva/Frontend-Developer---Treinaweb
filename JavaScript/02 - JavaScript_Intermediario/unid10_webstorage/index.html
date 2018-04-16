@@ -1,0 +1,32 @@
+<script>
+
+    localStorage.nome = 'Daniel Silva';
+    sessionStorage.nome = 'Matheus Silva';
+    
+    localStorage.setItem('idade', '30');
+    sessionStorage.setItem('idade', '2');
+    
+    var meuNome = localStorage.getItem('nome');
+    var seuNome = sessionStorage.getItem('nome');
+    
+    
+    console.log(seuNome);
+    console.log(meuNome);
+
+    
+    
+    localStorage.setItem('curso', 'JavaScript');
+    localStorage.setItem('nível', 'Intermediário');
+    
+    for (var i = 0; i < localStorage.length; i++){
+        var nome = localStorage.key(i);
+        var valor = localStorage.getItem(nome);
+        console.log(nome+" = "+valor);
+    }
+    
+    localStorage.clear();
+    sessionStorage.clear();
+    
+    
+    
+</script>

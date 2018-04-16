@@ -1,0 +1,41 @@
+<script>
+
+
+    
+    var agendaPessoal = (function(){
+        var agenda = {
+            nome: 'Agenda Pessoal',
+            contato: [
+                {
+                    nome: 'Daniel Silva',
+                    telefone: '114749-4995',
+                    email: 'dani3l.dxp@gmail.com',
+                    pagina: 'www.danielfs.gw'
+                },
+                {
+                    nome: 'Flávia Silva',
+                    telefone: '114749-5206',
+                    email: 'flavia.silva@hotmail.com',
+                },
+                {
+                    nome: 'Matheus Silva',
+                    telefone: '114749-4995',
+                    email: 'matheus.silva@outlook.com',
+                }
+            ],
+            getContatos: function(){
+                for (index in this.contato){
+                    var contatos = this.contato[index];
+                    console.log(contatos)
+                }
+            }
+        }
+        
+        return {
+            getValor: agenda.getContatos()
+        }
+    })();
+    
+    console.log(agendaPessoal.getValor)
+
+</script>

@@ -1,0 +1,44 @@
+<script>
+
+    var Falar = function(){
+        this.fala = function(msg){
+            console.log(msg)
+        }
+    }
+    
+    var Dog = function (nome, raca, cor){
+        this.nome = nome;
+        this.raca = raca;
+        this.cor = cor;
+        this.correr = function(){
+            console.log('Correndo');
+        };
+        this.latir = function(){
+            console.log('Latindo');
+        };
+        this.comer = function(){
+            console.log('Comendo');
+        };
+        this.dormir = function(){
+            console.log('Dormindo')
+        }
+    }
+    
+    var Dono = function (nome, idade, cao, comandos){
+        this.nome = nome;
+        this.idade = idade;
+        this.cao = cao.nome;
+        this.comando = comandos
+    }
+    
+    Dono.prototype = new Falar();
+    
+    var cao1 = new Dog('Pluto', 'São Bernardo', 'Bege')
+    
+    var dono1 = new Dono ('Daniel', 30, cao1, cao1.correr)
+    
+    dono1.fala('Agora eu sei falar')
+
+
+
+</script>

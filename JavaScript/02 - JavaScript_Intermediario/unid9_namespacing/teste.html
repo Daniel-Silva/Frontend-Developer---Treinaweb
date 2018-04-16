@@ -1,0 +1,24 @@
+    var receberNeuNome = receberNeuNome || {};
+    
+    (function(){
+        this.meuNome = 'Daniel Silva';
+    }).call(receberNeuNome);
+    
+    console.log(receberNeuNome.meuNome)
+    
+    
+    var verificarNomes = verificarNomes || {};
+    
+    (function(msg){
+        this.msg = 'Olá Mundo';
+    }).call(verificarNomes);
+    
+    console.log(verificarNomes.msg)
+    
+    
+    var retornandoNome = function(){
+        var meuNome = 'Daniel Silva';
+        return meuNome;
+    }
+    
+    console.log(receberNeuNome.meuNome);

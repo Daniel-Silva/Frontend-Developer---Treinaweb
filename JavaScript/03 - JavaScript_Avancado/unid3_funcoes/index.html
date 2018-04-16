@@ -1,0 +1,50 @@
+<script>
+
+    // Declaração de função
+    
+    function declaration(){
+        console.log('Sou uma Declaração de Função')
+    }
+    
+    declaration();
+
+    // Expressão de função
+    
+    var expression = function(){
+        console.log('Sou uma Expressão de Função');
+    }
+    
+    expression();
+    
+    // Callback
+    
+    var callbackFunction = function(callback){
+        callback();
+    }
+    
+    callbackFunction(function(){
+        console.log('Exemplo callback');
+    });
+    
+    // Função Anônima
+    
+    (function(nome){
+        console.log(nome);
+    })('Função anônima');
+    
+    // Escopo
+
+    (function(msg){
+        var value = 10;
+        console.log(msg);
+        
+        var getValue = function(){
+            console.log(value);
+        }
+        
+        getValue();
+
+    })('Daniel Silva');
+    
+    
+</script>

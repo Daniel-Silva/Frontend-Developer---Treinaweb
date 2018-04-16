@@ -1,0 +1,30 @@
+<script type="text/javascript">
+
+    var aniversario = new Date('07/11/1987 23:59:59');
+    
+    var validarAniversario = function(aniversario){
+        var hoje = new Date();
+        return hoje.getDate() == aniversario.getDate() && hoje.getMonth() == aniversario.getMonth();
+    }
+
+    console.log(validarAniversario(aniversario));
+    
+    var diasParaAniversario = function(aniversario){
+        var hoje = new Date();
+        aniversario.setFullYear(hoje.getFullYear());
+        
+        if(+hoje > +aniversario){
+            aniversario.setFullYear(hoje.getFullYear());
+        }
+        
+        var um_dia_ms = 1000 * 60 * 60 * 24;
+        
+        return Math.floor(Math.abs(+hoje - +aniversario)/um_dia_ms);
+    }
+                          
+if(validarAniversario(aniversario)){
+    document.write('Feliz aniversário!')
+}else{
+    document.write('Faltam '+diasParaAniversario(aniversario)+' dias para seu aniversário')
+}
+</script>

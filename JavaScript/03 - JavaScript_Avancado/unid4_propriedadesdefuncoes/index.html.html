@@ -1,0 +1,34 @@
+<script>
+
+    var areaCache = function(base, altura){
+        var key = base+"x"+altura;
+        if (!areaCache.cache[key]){
+            setTimeout(function(){
+                var calcularArea = base * altura;
+                areaCache.cache[key] = calcularArea;
+                console.log(calcularArea);
+            },5000);
+        }else {
+            console.log(areaCache.cache[key]);
+        }
+    }
+    
+    areaCache.cache = {};
+    
+    
+    var calcImc = function(peso, altura){
+        var key = peso+'x'+altura;
+        if(!calcImc.cache[key]){
+            setTimeout(function(){
+                var calcular = peso /(altura * altura);
+                calcImc.cache[key] = calcular;
+                console.log(calcular.toFixed(2));
+            }, 5000);
+        }else{
+            console.log(calcImc.cache[key]);
+        }
+    }
+    
+    calcImc.cache = {};
+
+</script>

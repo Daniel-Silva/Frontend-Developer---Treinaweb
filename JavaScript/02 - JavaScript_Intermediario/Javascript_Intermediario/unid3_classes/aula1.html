@@ -1,0 +1,52 @@
+<script>
+
+    // METODO CONSTRUTOR
+    
+    function Pencil(){
+        this.color = 'red';
+        this.write = function(text){
+            console.log(text)
+        }
+    }
+    
+    var myPencil = new Pencil();
+    
+    console.log(myPencil.color)
+    
+    // CLASSES
+    
+    class Humano{
+        falar(msg){
+            console.log(msg);
+        }
+    }
+    
+    class Dog extends Humano {
+        constructor(nome, cor, raca){
+            this.nome = nome;
+            this.cor = cor;
+            this.raca = raca;
+        }
+        
+        latir(){
+            console.log('Au! Uau! Au!');    
+        }
+        
+        dormir(){
+            console.log('ZzzZzzz...')
+        }
+    }
+
+    
+    
+    var myDog = new Dog('Tobby', 'Bege', 'Pastor Alemão');
+
+    
+    console.log(myDog.nome);
+    console.log(myDog.cor);
+    console.log(myDog.raca);
+    
+    
+
+
+</script>

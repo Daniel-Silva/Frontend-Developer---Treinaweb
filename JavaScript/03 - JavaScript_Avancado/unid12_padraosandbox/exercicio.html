@@ -1,0 +1,63 @@
+<script>
+
+    var Sandbox = function(){
+        var argumentsArray = Array.prototype.slice.call(arguments);
+        var callback = argumentsArray.pop();
+        var orderedModules = argumentsArray.pop();
+        
+        if(this instanceof Sandbox){
+            new Sandbox(orderedModules, callback);
+        }
+        
+        var modules = [];
+        for(index in orderedModules){
+            modules.push(Sandbox.modules[orderedModules[index]]);
+        }
+        
+        callback.apply(undefined, modules);
+    }
+    
+    
+    Sandbox.modules = {};
+    
+    Sandbox.modules.User = function(nome, email, idade, sexo){
+        this.nome = nome;
+        this.email = email;
+        this.idade = idade;
+        this.sexo = sexo
+    }
+    
+    Sandbox.modules.validator = (function(){
+        var isValidString = function(valor){
+            return typeof valor === 'string';
+        }
+        
+        var isValidNumber = function(valor){
+            return typeof valor === 'number';
+        }
+        
+        var isValidGender = function(sexo){
+            return sexo === 'Masculino' || sexo === 'Feminino';
+        }
+        
+        return {
+            isValidString: isValidString,
+            isValidNumber: isValidNumber,
+            isValidGender: isValidGender,
+        }
+    })();
+    
+    Sandbox(['User', 'validator'], function(User, validator){
+        var nome = 'Daniel Silva';
+        var idade = 30;
+        var email = 'dani3l.dxp@gmail.com';
+        var sexo = 'Masculino';
+        
+        if(validator.isValidString(nome) && validator.isValidNumber(idade) && validator.isValidGender(sexo)){
+            var user = new User(nome, email, idade, sexo);
+            console.log(user)
+        }
+    })
+    
+
+</script>

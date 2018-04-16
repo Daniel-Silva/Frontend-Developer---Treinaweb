@@ -1,0 +1,42 @@
+<script type="text/javascript">
+
+var Pessoa = function(nome, idade){
+	this.nome = nome
+	this.idade = idade
+}
+
+var Carro = function(cor, ano){
+	this.ano = ano;
+}
+
+var Passaro = function(cor, tamanho){
+	this.tamanho = tamanho;
+}
+
+var pessoa = new Pessoa('Andre', 17);
+var carro = new Carro('Preto', 2010);
+var passaro = new Passaro('Branco', 10);
+
+var pessoa2 = 3 - Desafio – Briga das instancias;
+var carro2 = carro;
+var passaro2 = passaro;
+
+Object.defineProperty(carro,'cor',{
+	configurable: false, 
+	value: 'Preto'
+});
+
+Object.defineProperty(passaro,'cor',{
+	configurable: false, 
+	value: 'Branco'
+});
+
+delete carro.cor;
+delete passaro.cor;
+
+pessoa2.nome = 'Ailton';
+
+console.log(pessoa2.nome);
+console.log(carro2.cor);
+console.log(passaro2.cor);
+</script>

@@ -1,0 +1,38 @@
+<script type="text/javascript">
+
+var estoque = [
+                {
+                    nome: 'Azeite',
+                    preco: 3.50,
+                    quantidade: 320,
+                },
+                {
+                    nome: 'Leite',
+                    preco: 2.60,
+                    quantidade: 1200,
+                },
+                {
+                    nome: 'Vinagre',
+                    preco: 6.20,
+                    quantidade: 410,
+                }
+            ]
+            
+            var retirarDoEstoque = function(estoque, nome, quantidade){
+                for(var i = 0; i < estoque.length; i++){
+                    var produto = estoque[i];
+                    if(produto.nome == nome){
+                        if(quantidade <= produto.quantidade){
+                            console.log('Produto encontrado. Foram retirados do estoque '+quantidade+ ' caixas');
+                        }else{
+                            console.log('Não temos essa quantidade em estoque. O estoque atual é: '+produto.quantidade);
+                        }
+                    }else{
+                        console.log('Produto não encontrado.');
+                    }
+                }
+            }
+            
+            retirarDoEstoque(estoque, 'Leite', 1300);
+
+</script>

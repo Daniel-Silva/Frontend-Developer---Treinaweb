@@ -1,0 +1,15 @@
+div{
+   position: absolute;
+   background-color: red;
+   border: 5px solid black;
+   top: 10px;
+   left: 10px;
+   width: 200px;
+   height: 100px;
+
+   transition: all 1s ease-in 2s ;
+}
+
+div:hover{
+	width: 400px;
+}

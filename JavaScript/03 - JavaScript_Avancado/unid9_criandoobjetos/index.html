@@ -1,0 +1,36 @@
+<script>
+    
+    
+    // Objeto construtor
+
+    var Pessoa = function(){
+        this.falar = function(msg){
+            console.log(msg);
+        }
+    }
+    
+    var daniel = new Pessoa();
+    
+    daniel.falar('Olá Mundo');
+    
+    // Objeto literal
+    
+    var pessoa = {
+        nome: 'Daniel Silva',
+        idade: 30
+    }
+    
+    console.log(pessoa.nome);
+    
+    // Objeto imediato
+    
+    ({
+        falar: function(msg){
+            console.log(msg);
+        },
+        init: function(){
+            this.falar('Olá, fui iniciado pelo objeto imediato')
+        }
+    }).init();
+
+</script>

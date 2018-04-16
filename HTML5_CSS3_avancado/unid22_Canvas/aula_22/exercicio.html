@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Aula 22</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+	<canvas id="meuCanvas" width="200" height="200" ></canvas>
+    
+	<img src="logo.png" id="logo" />
+
+	<script>
+        
+        var meuCanvas = document.getElementById('meuCanvas');
+        
+        ctx = meuCanvas.getContext('2d');
+        
+        ctx.moveTo(100,5);
+        ctx.lineTo(-90,395);
+        ctx.stroke();
+    
+    </script>
+</body>
+</html>

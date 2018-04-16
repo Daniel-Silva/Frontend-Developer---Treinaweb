@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html lang="en" manifest="meu_manifesto.appcache">
+<head>
+	<meta charset="utf-8">
+	<title>Aula 19</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <img src="logo.png" id="minhaImagem" draggable="true" ondragstart="dragStart(event)" />
+
+    <div class="drop-area-container" >
+    	<div ondrop="drop(event)" ondragover="allowDrop(event)" class="drop-area" ></div>
+    	<div ondrop="drop(event)" ondragover="allowDrop(event)" class="drop-area" ></div>
+	</div>
+
+
+
+	<script src="scripts.js"></script>
+</body>
+</html>

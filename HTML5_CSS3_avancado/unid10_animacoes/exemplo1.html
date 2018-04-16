@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Exemplo 1 - Animações</title>
+        
+        <style type="text/css">
+        
+            div {
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                border: 5px solid #000;
+                width: 200px;
+                height: 100px;
+                background-color: red;
+                
+                animation-name: animacao;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+            
+            @keyframes animacao {
+                from {
+                    background-color: red;
+                }
+                to {
+                    background-color: rebeccapurple;
+                }
+            }
+                
+        </style>
+        
+        
+    </head>
+    <body>
+        <div></div>
+        <script type="text/javascript">
+           
+        </script>
+    </body>
+
+</html>
