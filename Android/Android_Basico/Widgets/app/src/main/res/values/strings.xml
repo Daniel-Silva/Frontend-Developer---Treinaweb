@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Widgets</string>
-    <string name="txtNome">Seu nome</string>
-    <string name="btnProcessar">Processar</string>
-    <string name="txtResultado">Seja bem vindo</string>
-</resources>
