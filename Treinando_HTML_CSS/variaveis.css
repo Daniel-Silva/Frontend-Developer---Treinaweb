@@ -1,0 +1,17 @@
+:root{
+    --Color-border: #C3A2B7;
+    --Color-background: #A4B5D6;
+}
+
+.a1{
+    border: 1px solid var(--Color-border);
+}
+
+.a2{
+    border: 5px solid var(--Color-border);
+}
+
+div {
+    --minha-cor: green;
+    background-color: var(--Color-background)
+}
