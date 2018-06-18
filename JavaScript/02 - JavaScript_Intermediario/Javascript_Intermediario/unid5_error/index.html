@@ -1,0 +1,31 @@
+<script>
+
+    // STRICT MODE
+    
+    function myLooping(){
+        "use strict"
+        for (var i = 0; i <= 5; i++){
+            console.log(i)
+        }
+    }
+    
+    myLooping()
+    
+    
+    //GERANDO E TRATANDO ERROS
+    
+    function double (number){
+        if(typeof number !== 'number'){
+            throw new Error(`Valor esperado: number. Valor recebido: ${typeof number}`);
+        }
+        return number * 2;
+    }
+    
+    try{
+        console.log(double("ABC"))
+    } catch(e){
+        console.log(double(3))
+    }
+
+
+</script>
