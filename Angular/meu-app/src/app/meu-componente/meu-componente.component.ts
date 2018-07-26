@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'meu-componente-component',
-    template: `<div>Meu Componente</div>`
+    template: `<div>Componente criado manualmente</div>`
 })
 export class MeuComponenteComponent{
 
