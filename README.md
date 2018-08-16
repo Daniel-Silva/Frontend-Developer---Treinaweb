@@ -8,6 +8,7 @@ Neste repositório estão contidos todos os cursos que fiz até o momento e que 
 * CSS
 * JavaScript OO
 * jQuery
+* JAVA
 
 ## CURSOS
 
@@ -16,6 +17,9 @@ Neste repositório estão contidos todos os cursos que fiz até o momento e que 
 * JavaScript OO
 * jQuery Essencial
 * Design Responsivo
+* Java Fundamentos (Em andamento)
+* Angular - Fundamentos (Em andamento)
+* Scrum - Planejamento e desenvolvimento ágil (Em andamento)
 
 
 
