@@ -12,14 +12,14 @@ Neste repositório estão contidos todos os cursos que fiz até o momento e que 
 
 ## CURSOS
 
-* HTML5 Semântico
-* CSS, OOCSS e Mobile First
-* JavaScript OO
-* jQuery Essencial
-* Design Responsivo
-* Java Fundamentos (Em andamento)
-* Angular - Fundamentos (Em andamento)
-* Scrum - Planejamento e desenvolvimento ágil (Em andamento)
+* HTML5 Semântico - (Concluido)
+* CSS, OOCSS e Mobile First - (Concluido)
+* JavaScript OO - (Concluido)
+* jQuery Essencial - (Concluido)
+* Design Responsivo - (Concluido)
+* Java Fundamentos - (Concluido)
+* Angular Fundamentos - (Em andamento)
+* Scrum Planejamento e desenvolvimento ágil - (Em andamento)
 
 
 

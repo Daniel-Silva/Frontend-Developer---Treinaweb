@@ -1,6 +1,7 @@
 package br.com.treinaweb.main;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -39,7 +40,21 @@ public class Main {
 				 */
 				System.out.println("=== OPERAÇÃO MATEMÁTICA ===");
 				System.out.print("Digite o primeiro valor: ");
-				int valor1 = sc.nextInt();
+				int valor1 = 0;
+				
+				/**
+				 * Tratamento de exceções
+				 */
+				try {
+					valor1 = sc.nextInt();
+				} catch (InputMismatchException e) {
+					System.out.println(String.format("Ocorreu um erro de formato: %s. O primeiro número assumirá o valor 1", e.getMessage()));
+					sc.nextLine();
+					valor1 = 1;
+				} catch (Exception e) {
+					System.out.println("Erro Desconhecido!");
+				}
+				
 				System.out.print("Digite a operação: ");
 				char operacao = sc.next().charAt(0);
 				System.out.print("Digite o segundo valor: ");
@@ -99,9 +114,11 @@ public class Main {
 				 * imprime cada item do histórico na tela.
 				 * @param saída dos itens do histórico 
 				 */
-				for(int i = 0; i < historico.size(); i++) {
+				historico.forEach(intemHistorico -> System.out.println(intemHistorico));
+				
+				/*for(int i = 0; i < historico.size(); i++) {
 					System.out.println(historico.get(i));
-				}
+				}*/
 			}
 			System.out.println("=== O que você deseja fazer? ===");
 			System.out.println("1. Realizar operação matemática");
@@ -110,6 +127,7 @@ public class Main {
 			System.out.println("Qual a sua opção?");
 			acao = sc.nextInt();
 		}
+		System.out.println("=== SAINDO ===");
 		sc.close();
 	}
 }
