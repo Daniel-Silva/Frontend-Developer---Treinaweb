@@ -1,0 +1,25 @@
+<p>
+  {{ nome }}
+  {{aluno.dados.nome}}
+</p>
+
+<h1 *ngIf="isVisible">
+  {{aluno.dados.nome}}
+</h1>
+
+<ul>
+  <li *ngFor="let item of myList" >Item {{ item }}</li>
+</ul>
+
+<!-- Propert Bainding -->
+
+<img [src]="nome" />
+
+
+<!-- Event Binding -->
+
+<button (click)="handleClick()">Clique aqui!</button>
+
+<!-- Fluxo bidirecional -->
+
+<input type="text" [value]="nome" (input)="nome = $event.target.value" />
