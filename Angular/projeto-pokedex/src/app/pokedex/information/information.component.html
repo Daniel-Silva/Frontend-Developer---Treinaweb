@@ -1,14 +1,14 @@
 
-<a class="back-button">&ang;</a>
+<a class="back-button" > < </a>
 
 <div class="poke-profile" >
-  <div>025 - Pikachu</div>
-  <img class="poke-sprite" src="//serebii.net/sunmoon/pokemon/025.png" />
+  <div>{{ pokemonNumber }} - {{ pokemon.name }}</div>
+  <img class="poke-sprite" src="//serebii.net/sunmoon/pokemon/{{ pokemonNumber | number:'3.0-0' }}.png" />
 </div>
 
 <ul class="poke-types" >
-  <li>
-    <img src="//serebii.net/pokedex-bw/type/electric.gif" />
+  <li *ngFor="let type of pokemon.types" >
+    <img src="//serebii.net/pokedex-bw/type/{{type.name}}.gif" />
   </li>
 </ul>
 
@@ -21,10 +21,10 @@
     <td>Speed</td>
   </tr>
   <tr>
-    <td>100</td>
-    <td>100</td>
-    <td>100</td>
-    <td>100</td>
-    <td>100</td>
+    <td>{{ pokemon.attack }}</td>
+    <td>{{ pokemon.defense }}</td>
+    <td>{{ pokemon.sp_atk }}</td>
+    <td>{{ pokemon.sp_def }}</td>
+    <td>{{ pokemon.speed }}</td>
   </tr>
 </table>

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeuComponent2Component implements OnInit {
 
+
   nome: String = "Seja bem vindo Daniel Silva";
   isVisible = false;
 
