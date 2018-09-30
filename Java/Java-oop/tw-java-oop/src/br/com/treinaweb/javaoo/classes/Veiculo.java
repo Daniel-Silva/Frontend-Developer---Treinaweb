@@ -1,5 +1,7 @@
 package br.com.treinaweb.javaoo.classes;
 
+import br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
+
 /**
  * Classe veículo para o projeto do curso de Java - Orientação a Objetos
  * @author Daniel Silva
@@ -15,6 +17,8 @@ public class Veiculo {
 	private String modelo;
 	private String motor;
 	private String ano;
+	private String chassi;
+	protected int qtdRodas;
 	private float qtdCombustivel;
 	
 	/**
@@ -94,10 +98,39 @@ public class Veiculo {
 	public void setAno(String ano) {
 		this.ano = ano;
 	}
+	
+	/**
+	 * 
+	 * @return chassi
+	 */
+	public String getChassi() {
+		return chassi;
+	}
+	
+	/**
+	 * 
+	 * @param chassi
+	 */
+	public void setChassi(String chassi) throws Exception{
+		if(chassi.length() == 10) {
+			this.chassi = chassi;
+		}else {
+			throw new ChassiInvalidoException (chassi);
+		}
+		
+	}
+	
+	/**
+	 * 
+	 * @return qtdRodas
+	 */
+	public int getQtdRodas() {
+		return qtdRodas;
+	}
 
 	/**
 	 * 
-	 * @return
+	 * @return qtdCombustivel
 	 */
 	public float getQtdCombustivel() {
 		return qtdCombustivel;
@@ -111,6 +144,8 @@ public class Veiculo {
 	public void abastecer(float litros) {
 		this.qtdCombustivel += litros;
 	}
+
+	
 	
 	
 	
