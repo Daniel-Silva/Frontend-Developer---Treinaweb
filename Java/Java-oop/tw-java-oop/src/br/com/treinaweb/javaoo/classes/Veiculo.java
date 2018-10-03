@@ -1,6 +1,7 @@
 package br.com.treinaweb.javaoo.classes;
 
 import br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
+import br.com.treinaweb.javaoo.excecoes.ValidarAbastecimentoException;
 
 /**
  * Classe veículo para o projeto do curso de Java - Orientação a Objetos
@@ -9,7 +10,7 @@ import br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
  */
 
 public class Veiculo {
-	
+		
 	/**
 	 * Definindo atributos para classe veículo
 	 */
@@ -20,11 +21,17 @@ public class Veiculo {
 	private String chassi;
 	protected int qtdRodas;
 	private float qtdCombustivel;
+	private Boolean ligado;
 	
+	public Veiculo() {
+		this.ligado = false;
+	}
+
 	/**
 	 * método para ligar o carro
 	 */
 	public void ligar() {
+		this.ligado = true;
 		System.out.println("Veículo ligado!");
 	}
 	
@@ -32,6 +39,7 @@ public class Veiculo {
 	 * método para desligar o carro
 	 */
 	public void desligar() {
+		this.ligado = false;
 		System.out.println("Veículo desligado!");
 	}
 
@@ -141,14 +149,18 @@ public class Veiculo {
 	 * @param litros
 	 * @return
 	 */
-	public void abastecer(float litros) {
-		this.qtdCombustivel += litros;
+	public void abastecer(float litros) throws ValidarAbastecimentoException{
+		if(!this.ligado) {
+			this.qtdCombustivel += litros;
+		} else {
+			throw new ValidarAbastecimentoException();
+		}
 	}
 
 	
-	
-	
-	
+	public Boolean isLigado() {
+		return ligado;
+	}	
 	
 	
 }
