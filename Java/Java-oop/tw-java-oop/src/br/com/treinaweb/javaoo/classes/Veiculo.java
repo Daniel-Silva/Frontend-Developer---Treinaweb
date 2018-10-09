@@ -1,6 +1,8 @@
 package br.com.treinaweb.javaoo.classes;
 
+import br.com.treinaweb.javaoo.excecoes.AceleracaoVeiculoException;
 import br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
+import br.com.treinaweb.javaoo.excecoes.FrenagemVeiculoException;
 import br.com.treinaweb.javaoo.excecoes.ValidarAbastecimentoException;
 
 /**
@@ -22,9 +24,11 @@ public class Veiculo {
 	protected int qtdRodas;
 	private float qtdCombustivel;
 	private Boolean ligado;
+	protected float velocidade;
 	
 	public Veiculo() {
 		this.ligado = false;
+		this.velocidade = 0;
 	}
 
 	/**
@@ -32,6 +36,7 @@ public class Veiculo {
 	 */
 	public void ligar() {
 		this.ligado = true;
+		this.velocidade = 0;
 		System.out.println("Veículo ligado!");
 	}
 	
@@ -40,6 +45,7 @@ public class Veiculo {
 	 */
 	public void desligar() {
 		this.ligado = false;
+		this.velocidade = 0;
 		System.out.println("Veículo desligado!");
 	}
 
@@ -149,17 +155,47 @@ public class Veiculo {
 	 * @param litros
 	 * @return
 	 */
-	public void abastecer(float litros) throws ValidarAbastecimentoException{
+	public final void abastecer(float litros) throws ValidarAbastecimentoException{
 		if(!this.ligado) {
 			this.qtdCombustivel += litros;
 		} else {
 			throw new ValidarAbastecimentoException();
 		}
 	}
-
 	
+	/**
+	 * 
+	 */
+	public void acelerar() throws AceleracaoVeiculoException{
+		if(this.ligado) {
+			this.velocidade += 10;
+		}else {
+			throw new AceleracaoVeiculoException();
+		}
+	}
+	
+	public void frear() throws FrenagemVeiculoException{
+		if(this.ligado) {
+			this.velocidade -= 10;
+		}else {
+			throw new FrenagemVeiculoException();
+		}
+	}
+
+	/**
+	 * 
+	 * @return ligado
+	 */
 	public Boolean isLigado() {
 		return ligado;
+	}
+
+	/**
+	 * 
+	 * @return velocidade
+	 */
+	public float getVelocidade() {
+		return velocidade;
 	}	
 	
 	

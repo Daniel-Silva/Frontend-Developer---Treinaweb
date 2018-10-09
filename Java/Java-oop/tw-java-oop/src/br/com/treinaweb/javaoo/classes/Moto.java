@@ -1,5 +1,8 @@
 package br.com.treinaweb.javaoo.classes;
 
+import br.com.treinaweb.javaoo.excecoes.AceleracaoVeiculoException;
+import br.com.treinaweb.javaoo.excecoes.FrenagemVeiculoException;
+
 public class Moto extends Veiculo {
 	
 	
@@ -24,8 +27,27 @@ public class Moto extends Veiculo {
 	/**
 	 * Construtor padrão
 	 */
-	public Moto() {
-		
+	public Moto(String modelo, String marca) {
+		this.qtdRodas = 2;
+		this.setModelo(modelo);
+		this.setMarca(marca);
 	}
 	
+	@Override
+	public void acelerar() throws AceleracaoVeiculoException{
+		if(this.isLigado()) {
+			this.velocidade += 3;
+		}else {
+			throw new AceleracaoVeiculoException();
+		}
+	}
+	
+	@Override
+	public void frear() throws FrenagemVeiculoException{
+		if(this.isLigado()) {
+			this.velocidade += 3;
+		}else {
+			throw new FrenagemVeiculoException();
+		}
+	}
 }
