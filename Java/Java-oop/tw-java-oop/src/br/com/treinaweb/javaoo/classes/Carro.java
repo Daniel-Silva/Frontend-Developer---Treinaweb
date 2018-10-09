@@ -5,8 +5,7 @@ import br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
 public class Carro extends Veiculo {
 	
 	private int qtdPortas;
-	
-	
+		
 	
 	/**
 	 * Construtor da classe carro
@@ -52,4 +51,11 @@ public class Carro extends Veiculo {
 	public void setQtdPortas(int qtdPortas) {
 		this.qtdPortas = qtdPortas;
 	}
+
+	@Override
+	public void preparar() {
+		System.out.println("Coloque o sinto de segurança");		
+	}
+	
+	
 }

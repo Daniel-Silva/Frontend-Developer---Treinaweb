@@ -3,7 +3,7 @@ package br.com.treinaweb.javaoo.classes;
 import br.com.treinaweb.javaoo.excecoes.AceleracaoVeiculoException;
 import br.com.treinaweb.javaoo.excecoes.FrenagemVeiculoException;
 
-public class Moto extends Veiculo {
+public final class Moto extends Veiculo {
 	
 	
 	/**
@@ -49,5 +49,10 @@ public class Moto extends Veiculo {
 		}else {
 			throw new FrenagemVeiculoException();
 		}
+	}
+
+	@Override
+	public void preparar() {
+		System.out.println("Coloque o capacete");		
 	}
 }

@@ -4,6 +4,7 @@ import br.com.treinaweb.javaoo.excecoes.AceleracaoVeiculoException;
 import br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
 import br.com.treinaweb.javaoo.excecoes.FrenagemVeiculoException;
 import br.com.treinaweb.javaoo.excecoes.ValidarAbastecimentoException;
+import br.com.treinaweb.javaoo.interfaces.VeiculoInterface;
 
 /**
  * Classe veículo para o projeto do curso de Java - Orientação a Objetos
@@ -11,7 +12,7 @@ import br.com.treinaweb.javaoo.excecoes.ValidarAbastecimentoException;
  *
  */
 
-public class Veiculo {
+public abstract class Veiculo implements VeiculoInterface {
 		
 	/**
 	 * Definindo atributos para classe veículo
@@ -165,6 +166,7 @@ public class Veiculo {
 	
 	/**
 	 * 
+	 * @throws AceleracaoVeiculoException
 	 */
 	public void acelerar() throws AceleracaoVeiculoException{
 		if(this.ligado) {
@@ -174,6 +176,10 @@ public class Veiculo {
 		}
 	}
 	
+	/**
+	 * 
+	 * @throws FrenagemVeiculoException
+	 */
 	public void frear() throws FrenagemVeiculoException{
 		if(this.ligado) {
 			this.velocidade -= 10;
@@ -181,6 +187,11 @@ public class Veiculo {
 			throw new FrenagemVeiculoException();
 		}
 	}
+	
+	/**
+	 * 
+	 */
+	public abstract void preparar();
 
 	/**
 	 * 
