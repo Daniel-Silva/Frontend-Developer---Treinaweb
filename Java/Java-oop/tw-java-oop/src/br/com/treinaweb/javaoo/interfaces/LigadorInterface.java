@@ -1,6 +1,8 @@
 package br.com.treinaweb.javaoo.interfaces;
 
-public interface Ligador {
+public interface LigadorInterface {
+
 	void ligar();
 	void desligar();
+	
 }

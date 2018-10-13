@@ -4,6 +4,8 @@ import br.com.treinaweb.javaoo.excecoes.AceleracaoVeiculoException;
 import br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
 import br.com.treinaweb.javaoo.excecoes.FrenagemVeiculoException;
 import br.com.treinaweb.javaoo.excecoes.ValidarAbastecimentoException;
+import br.com.treinaweb.javaoo.interfaces.AndarInterface;
+import br.com.treinaweb.javaoo.interfaces.LigadorInterface;
 import br.com.treinaweb.javaoo.interfaces.VeiculoInterface;
 
 /**
@@ -12,7 +14,7 @@ import br.com.treinaweb.javaoo.interfaces.VeiculoInterface;
  *
  */
 
-public abstract class Veiculo implements VeiculoInterface {
+public abstract class Veiculo implements VeiculoInterface, AndarInterface, LigadorInterface {
 		
 	/**
 	 * Definindo atributos para classe veículo
