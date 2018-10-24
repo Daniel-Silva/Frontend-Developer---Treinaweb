@@ -17,25 +17,23 @@
         <![endif]-->
         
         <script>
+          
+            let c;
+            let array = [10,2,7,4,8,3];
             
-            let c, d, e;
-            let array = [5,12,2,17,23,1];
-            
-            for(let i = 0; i <= array.length; i++){
-                d = array.length[i];
-                for(let j = 0; j <= array.length; j++){
-                    e = array.length[j];
-                    if(d > e){
-                        c = d;
-                        d = e;
-                        e = c;
-                        array.unshift(e);
+            console.log(array)
+
+            for(let i = 0; i < array.length; i++){
+                for(let j = i + 1; j < array.length; j++){
+                    if(array[i] > array[j]){
+                        c = array[i];
+                        array[i] = array[j];
+                        array[j] = c;
                     }
                 }
             }
-          
-
-
+            
+            console.log(array)
         </script>
     </body>
 </html>
