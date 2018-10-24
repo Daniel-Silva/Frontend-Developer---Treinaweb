@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Unidade 8 - Estrutura de dados</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            
+            let myArray = [2,4,6,8,10];
+            
+            console.log(myArray.length)
+
+            // Verificando condição com every
+           /* myArray.every(funciton(num){
+                return num % 2 ===0;
+            })*/
+
+            myArray.every(num => num % 2 ===0); //Arrow function
+
+            // Filtro no Array com filter
+            let myArray2 = [2,3,4,5,6,7,8,9,10];
+
+            myArray2.filter(n => n % 2 !== 0);
+
+            // Filtro com find
+            let myArray3 = [2,3,4,5,6,7,8,9,10];
+            myArray3.find(n => n > 5);
+
+            // Filtro com sort
+            let myArray4 = [22,3,2,4,35,76,17,8,9,10];
+            console.log(myArray4.sort(function(a,b){
+                if(a < b){
+                    return -1;
+                }else if(a > b){
+                    return 1;
+                }else{
+                    0
+                }
+            }));
+
+        </script>
+    </body>
+</html>
