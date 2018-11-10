@@ -12,16 +12,15 @@ public class Main {
 		try {
 			Veiculo corsa = new Carro("GM", "Corsa Sedan", "1.6cv", "2010", "C157B9781F");		
 			
-			System.out.println(corsa.getQtdCombustivel());
-			System.out.println(corsa.isLigado());
+
 			((Carro)corsa).setQtdPortas(4);
-			corsa.ligar();
-			corsa.desligar();
 			corsa.abastecer(20);
+			corsa.ligar();
+			corsa.acelerar();			
 			System.out.println(corsa.getQtdCombustivel() + " Litros de combustível no tamque");
-			System.out.println(corsa.getChassi());
-			System.out.println(corsa.getQtdRodas() + " rodas + estepe");
-			System.out.println(corsa.isLigado());
+			System.out.println(corsa.getVelocidade());
+			corsa.acelerar();
+			System.out.println(corsa.getVelocidade());
 			
 		} catch (ValidarAbastecimentoException e) {
 			System.out.println("Desligue o veículo para abastecer!");

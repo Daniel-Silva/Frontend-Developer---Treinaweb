@@ -2,7 +2,7 @@ package br.com.treinaweb.javaoo.classes;
 
 import br.com.treinaweb.javaoo.excecoes.ChassiInvalidoException;
 
-public class Carro extends Veiculo {
+public final class Carro extends Veiculo {
 	
 	private int qtdPortas;
 		
