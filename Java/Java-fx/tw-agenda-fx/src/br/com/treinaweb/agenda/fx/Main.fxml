@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<VBox maxHeight="420.0" maxWidth="600.0" minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="420.0" maxWidth="600.0" minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.treinaweb.agenda.fx.MainController">
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
@@ -32,7 +32,7 @@
             <Insets top="5.0" />
          </VBox.margin>
          <children>
-            <TableView layoutX="5.0" layoutY="5.0" prefHeight="190.0" prefWidth="570.0">
+            <TableView fx:id="tabelaContatos" layoutX="5.0" layoutY="5.0" prefHeight="190.0" prefWidth="570.0">
               <columns>
                 <TableColumn editable="false" prefWidth="200.0" text="Nome" />
                 <TableColumn editable="false" minWidth="0.0" prefWidth="60.0" text="Idade" />
@@ -40,17 +40,17 @@
                   <TableColumn prefWidth="160.0" text="Telefone" />
               </columns>
             </TableView>
-            <Button layoutX="5.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #323B51;" text="Add" textFill="WHITE">
+            <Button fx:id="btnInsert" layoutX="5.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #323B51;" text="Add" textFill="WHITE">
                <font>
                   <Font name="Josefin Sans Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="198.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #323B51;" text="Edit" textFill="WHITE">
+            <Button fx:id="btnUpdate" layoutX="198.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #323B51;" text="Edit" textFill="WHITE">
                <font>
                   <Font name="Josefin Sans Bold" size="12.0" />
                </font>
           	</Button>
-          	<Button layoutX="391.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #E61E44;" text="Delete" textFill="WHITE">
+          	<Button fx:id="btnDelete" layoutX="391.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #E61E44;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="Josefin Sans Bold" size="12.0" />
                </font>
@@ -106,7 +106,7 @@
                               <Font name="Josefin Sans Regular" size="12.0" />
                            </font>
                         </Label>
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextField fx:id="txfIdade" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
@@ -114,7 +114,7 @@
                               <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                            </padding>
                         </TextField>
-                        <TextField GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <TextField fx:id="txfEmail" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
@@ -122,7 +122,7 @@
                               <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                            </padding>
                         </TextField>
-                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <TextField fx:id="txfTelefone" GridPane.columnIndex="3" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
@@ -130,7 +130,7 @@
                               <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                            </padding>
                         </TextField>
-                        <TextField GridPane.rowIndex="1">
+                        <TextField fx:id="txfNome" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
@@ -138,7 +138,7 @@
                               <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                            </padding>
                         </TextField>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #323B51;" text="Save" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <Button fx:id="btnSava" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #323B51;" text="Save" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
                            <font>
                               <Font name="Josefin Sans Bold" size="12.0" />
                            </font>
@@ -146,7 +146,7 @@
                               <Insets right="5.0" />
                            </GridPane.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #E61E44;" text="Cancel" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <Button fx:id="btnCancel" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #E61E44;" text="Cancel" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <font>
                               <Font name="Josefin Sans Bold" size="12.0" />
                            </font>
