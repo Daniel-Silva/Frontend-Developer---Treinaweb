@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.cell.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
@@ -9,6 +10,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory ?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
 <VBox maxHeight="420.0" maxWidth="600.0" minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.treinaweb.agenda.fx.MainController">
    <padding>
@@ -34,23 +37,39 @@
          <children>
             <TableView fx:id="tabelaContatos" layoutX="5.0" layoutY="5.0" prefHeight="190.0" prefWidth="570.0">
               <columns>
-                <TableColumn editable="false" prefWidth="200.0" text="Nome" />
-                <TableColumn editable="false" minWidth="0.0" prefWidth="60.0" text="Idade" />
-                  <TableColumn editable="false" prefWidth="150.0" text="E-mail" />
-                  <TableColumn prefWidth="160.0" text="Telefone" />
+                <TableColumn editable="false" prefWidth="200.0" text="Nome">
+                	<cellValueFactory>
+                		<PropertyValueFactory property="nome" />
+                	</cellValueFactory>
+                </TableColumn>
+                <TableColumn editable="false" minWidth="0.0" prefWidth="60.0" text="Idade">
+                	<cellValueFactory>
+                		<PropertyValueFactory property="idade" />
+                	</cellValueFactory>
+                </TableColumn>
+                <TableColumn editable="false" prefWidth="150.0" text="E-mail">
+                	<cellValueFactory>
+                		<PropertyValueFactory property="email" />
+                	</cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="160.0" text="Telefone">
+                	<cellValueFactory>
+                		<PropertyValueFactory property="telefone" />
+                	</cellValueFactory>
+                </TableColumn>
               </columns>
             </TableView>
-            <Button fx:id="btnInsert" layoutX="5.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #323B51;" text="Add" textFill="WHITE">
+            <Button fx:id="btnInsert" layoutX="6.0" layoutY="198.0" mnemonicParsing="false" onAction="#btnInsert_Action" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #323B51;" text="Add" textFill="WHITE">
                <font>
                   <Font name="Josefin Sans Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="btnUpdate" layoutX="198.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #323B51;" text="Edit" textFill="WHITE">
+            <Button fx:id="btnUpdate" layoutX="198.0" layoutY="197.0" mnemonicParsing="false" onAction="#btnUpdate_Action" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #323B51;" text="Edit" textFill="WHITE">
                <font>
                   <Font name="Josefin Sans Bold" size="12.0" />
                </font>
           	</Button>
-          	<Button fx:id="btnDelete" layoutX="391.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #E61E44;" text="Delete" textFill="WHITE">
+          	<Button fx:id="btnDelete" layoutX="391.0" layoutY="198.0" mnemonicParsing="false" onAction="#btnDelete_Action" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #E61E44;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="Josefin Sans Bold" size="12.0" />
                </font>
@@ -138,7 +157,7 @@
                               <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                            </padding>
                         </TextField>
-                        <Button fx:id="btnSava" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #323B51;" text="Save" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <Button fx:id="btnSava" mnemonicParsing="false" onAction="#btnSave_Action" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #323B51;" text="Save" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
                            <font>
                               <Font name="Josefin Sans Bold" size="12.0" />
                            </font>
@@ -146,7 +165,7 @@
                               <Insets right="5.0" />
                            </GridPane.margin>
                         </Button>
-                        <Button fx:id="btnCancel" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #E61E44;" text="Cancel" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancel_Action" prefHeight="25.0" prefWidth="183.333" style="-fx-background-color: #E61E44;" text="Cancel" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <font>
                               <Font name="Josefin Sans Bold" size="12.0" />
                            </font>
