@@ -7,4 +7,9 @@ public class ContaSalario extends Conta {
 		System.out.println("Função indisponível para Conta Salário");		
 	}
 	
+	@Override
+	public float getSaldo() {
+		return saldo;
+	}
+	
 }

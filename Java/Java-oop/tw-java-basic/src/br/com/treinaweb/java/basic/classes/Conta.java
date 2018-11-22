@@ -97,9 +97,7 @@ public abstract class Conta {
 	 * 
 	 * @return saldo
 	 */
-	public float getSaldo() {
-		return saldo;
-	}
+	public abstract float getSaldo();
 	
 
 	/**
