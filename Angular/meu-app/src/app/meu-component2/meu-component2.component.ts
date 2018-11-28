@@ -11,6 +11,8 @@ export class MeuComponent2Component implements OnInit {
   nome: String = "Seja bem vindo Daniel Silva";
   isVisible = false;
 
+  myValue = 2;
+
   myList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   aluno = {
@@ -18,6 +20,8 @@ export class MeuComponent2Component implements OnInit {
       nome: "Matheus Silva"
     }
   }
+
+  meuNome = 'Eu amo minha família'
 
   // Função que será utilizada no Event Binding
   handleClick(){
