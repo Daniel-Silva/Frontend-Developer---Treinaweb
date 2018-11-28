@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\pokedex"
   ],
-  "SelectedNode": "\\angular.json",
+  "SelectedNode": "\\src\\app\\app.component.html",
   "PreviewInSolutionExplorer": false
 }

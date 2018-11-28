@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { MeuComponenteComponent } from './meu-componente/meu-componente.component';
 import { NewComponentComponent } from './new-component/new-component.component';
 import { MeuComponent2Component } from './meu-component2/meu-component2.component';
-import { ClassComponentComponent } from './class-component/class-component.component'
+import { ClassComponentComponent } from './class-component/class-component.component';
+import { MenuComponent } from './menu-component/menu.component';
+import { NameComponentComponent } from './name-component/name-component.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { ClassComponentComponent } from './class-component/class-component.compo
     MeuComponenteComponent,
     NewComponentComponent,
     MeuComponent2Component,
-    ClassComponentComponent
+    ClassComponentComponent,
+    MenuComponent,
+    NameComponentComponent
   ],
   imports: [
     BrowserModule
