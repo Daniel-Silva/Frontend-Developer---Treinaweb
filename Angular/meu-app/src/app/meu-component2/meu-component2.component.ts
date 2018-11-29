@@ -21,11 +21,16 @@ export class MeuComponent2Component implements OnInit {
     }
   }
 
+
   meuNome = 'Eu amo minha família'
+
+  // Variável usada no Propert Binding
+
+  imgSrc = 'imagem.png'
 
   // Função que será utilizada no Event Binding
   handleClick(){
-    alert("Olá");
+    alert("Olá" + this.nome);
   }
 
   constructor() { }

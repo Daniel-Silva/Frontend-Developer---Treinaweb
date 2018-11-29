@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { MeuComponent2Component } from './meu-component2/meu-component2.componen
 import { ClassComponentComponent } from './class-component/class-component.component';
 import { MenuComponent } from './menu-component/menu.component';
 import { NameComponentComponent } from './name-component/name-component.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { NameComponentComponent } from './name-component/name-component.componen
     NameComponentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

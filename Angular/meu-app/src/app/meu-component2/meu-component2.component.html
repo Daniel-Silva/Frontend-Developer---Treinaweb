@@ -27,13 +27,15 @@
 
 <!-- Propert Bainding -->
 
-<img [src]="nome" />
+<img [src]="imgSrc" />
 
 
 <!-- Event Binding -->
 
-<button (click)="handleClick()">Clique aqui!</button>
+<button (click)="handleClick()">Clique aqui!</button><br>
 
 <!-- Fluxo bidirecional -->
 
-<input type="text" [value]="nome" (input)="nome = $event.target.value" />
+<input type="text" [value]="aluno.dados.nome" (input)="nome = $event.target.value" />
+<input type="text" [ngModel]="nome" (ngModelChange)='nome = $event' />
+<input type="text" [(ngModel)]="nome" />

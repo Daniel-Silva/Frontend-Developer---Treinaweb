@@ -14,3 +14,15 @@
   [class.classe3]="minhaClasse.value == 3"
   [class.classeMaior1]="minhaClasse.value > 1"
 >Minha classe</div>
+
+
+<select (change)="0" #myClass>
+  <option value="1">Daniel Silva</option>
+  <option value="2">Flávia Silva</option>
+  <option value="3">Matheus Silva</option>
+</select>
+
+<div [class.classVermelho]='myClass.value == 1'
+     [class.classRosa]='myClass.value == 2'
+     [class.classAzul]='myClass.value == 3'
+     [class.classComplement]='myClass.value > 1'>Minha Classe - Angular</div>
