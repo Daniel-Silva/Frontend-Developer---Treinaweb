@@ -3,8 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\pokedex"
+    "\\src\\app\\pokedex",
+    "\\src\\app\\pokedex\\list"
   ],
-  "SelectedNode": "\\src\\app\\app.component.html",
+  "SelectedNode": "\\src\\app\\pokedex\\list\\list.component.ts",
   "PreviewInSolutionExplorer": false
 }
