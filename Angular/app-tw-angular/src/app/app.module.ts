@@ -15,6 +15,8 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TowayDataBindingManualComponent } from './toway-data-binding-manual/toway-data-binding-manual.component';
 import { TowayDataBindingAutoComponent } from './toway-data-binding-auto/toway-data-binding-auto.component';
 import { ClassBindingComponent } from './class-binding/class-binding.component';
+import { StyleBindingComponent } from './style-binding/style-binding.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ClassBindingComponent } from './class-binding/class-binding.component';
     EventBindingComponent,
     TowayDataBindingManualComponent,
     TowayDataBindingAutoComponent,
-    ClassBindingComponent
+    ClassBindingComponent,
+    StyleBindingComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
