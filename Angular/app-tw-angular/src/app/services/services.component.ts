@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServicesComponent implements OnInit {
 
   alunos = [];
-  constructor( private alunosService: AlunosService ) { 
+  constructor( private alunosService: AlunosService ) {
     this.alunos = this.alunosService.getAlunos();
   }
 

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { MeuComponentManual } from './meu-component-manual/meu-component-manual.component';
@@ -17,6 +18,7 @@ import { TowayDataBindingAutoComponent } from './toway-data-binding-auto/toway-d
 import { ClassBindingComponent } from './class-binding/class-binding.component';
 import { StyleBindingComponent } from './style-binding/style-binding.component';
 import { ServicesComponent } from './services/services.component';
+import { RequisicoesHttpComponent } from './requisicoes-http/requisicoes-http.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +36,13 @@ import { ServicesComponent } from './services/services.component';
     TowayDataBindingAutoComponent,
     ClassBindingComponent,
     StyleBindingComponent,
-    ServicesComponent
+    ServicesComponent,
+    RequisicoesHttpComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
