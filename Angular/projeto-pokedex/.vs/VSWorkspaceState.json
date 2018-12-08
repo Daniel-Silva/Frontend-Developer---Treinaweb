@@ -7,6 +7,6 @@
     "\\src\\app\\pokedex\\list",
     "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\pokedex\\list\\list.component.ts",
+  "SelectedNode": "\\src\\app\\services\\pokeapi.service.ts",
   "PreviewInSolutionExplorer": false
 }
