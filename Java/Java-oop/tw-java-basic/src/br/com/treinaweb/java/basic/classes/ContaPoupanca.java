@@ -4,6 +4,22 @@ import br.com.treinaweb.java.basic.interfaces.ContaPoupancaInterface;
 
 public class ContaPoupanca extends Conta implements ContaPoupancaInterface {
 
+	
+	/**
+	 * Construtor com parâmetos
+	 * @param nome
+	 * @param email
+	 * @param telefone
+	 */
+	public ContaPoupanca(String nome, String email, String telefone) {
+		super(nome, email, telefone);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public ContaPoupanca() {
+		super();
+	}
+
 	private float juros;
 	
 	@Override

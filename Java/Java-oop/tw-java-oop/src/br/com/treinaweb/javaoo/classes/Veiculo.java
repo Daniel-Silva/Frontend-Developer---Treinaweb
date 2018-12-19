@@ -162,7 +162,7 @@ public abstract class Veiculo implements VeiculoInterface, AndarInterface, Ligad
 		if(!this.ligado) {
 			this.qtdCombustivel += litros;
 		} else {
-			throw new ValidarAbastecimentoException();
+			throw new ValidarAbastecimentoException("Desligue o veículo primeiro!");
 		}
 	}
 	

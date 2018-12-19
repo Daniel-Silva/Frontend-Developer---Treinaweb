@@ -1,5 +1,7 @@
 package br.com.treinaweb.java.basic.classes;
 
+import java.util.Random;
+
 import br.com.treinaweb.java.basic.execoes.SacarException;
 
 public abstract class Conta {
@@ -13,6 +15,25 @@ public abstract class Conta {
 	private Boolean ativo;
 	
 	
+		
+	/**
+	 * Construtor com parâmetos
+	 * @param nome
+	 * @param email
+	 * @param telefone
+	 */
+	public Conta(String nome, String email, String telefone) {
+		super();
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+		this.openConta();
+	}
+	
+	public Conta() {
+		super();
+	}
+
 	/**
 	 * Método para depositar
 	 * @param valor
@@ -88,9 +109,10 @@ public abstract class Conta {
 	public int getConta() {
 		return conta;
 	}
-	
-	protected void setConta() {
-		this.conta = (int) (Math.random() * 501);
+
+	protected void openConta() {
+		Random gerador = new Random();
+		this.conta = gerador.nextInt(26);
 	}
 	
 	/**

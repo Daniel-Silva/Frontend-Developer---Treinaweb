@@ -7,7 +7,22 @@ public class ContaCorrente extends Conta implements ContaCorrenteInterface{
 
 	private float limiteCartao;
 	private float compra;
-
+	
+	
+	/**
+	 * Construtor com parâmetos
+	 * @param nome
+	 * @param email
+	 * @param telefone
+	 */
+	public ContaCorrente(String nome, String email, String telefone) {
+		super(nome, email, telefone);
+	}
+	
+	public ContaCorrente() {
+		super();
+	}
+	
 	@Override
 	public void depositar(float valor) {
 		this.saldo += valor;		
@@ -36,6 +51,7 @@ public class ContaCorrente extends Conta implements ContaCorrenteInterface{
 	 */
 	public void setCompra(float compra) {
 		this.compra = compra;
+		this.saldo -= this.compra;
 	}
 
 	public void CartaoCredito (float compra) throws LimiteCartaoException {
@@ -50,6 +66,6 @@ public class ContaCorrente extends Conta implements ContaCorrenteInterface{
 	public float getSaldo() {
 		return saldo;
 	}
-
+	
 	
 }

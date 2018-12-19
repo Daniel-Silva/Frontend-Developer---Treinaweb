@@ -10,19 +10,25 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HelloServlet extends HttpServlet {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 917942103489487808L;
+	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.service(request, response);
 		
-		PrintWriter out = resp.getWriter();
-		out.println("<h1>TESTE</h1>");
-		
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<title>Servlet - Java web</title>");
+		out.println("</head>");
+		out.println("<body>");
+		out.println("<h1>Servlet - Java web</h1>");
+		out.println("</body>");
+		out.println("</html>");
 	}
-
+	
 	
 	
 }
+

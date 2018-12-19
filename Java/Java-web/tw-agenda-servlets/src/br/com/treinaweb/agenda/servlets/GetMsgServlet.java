@@ -1,6 +1,7 @@
 package br.com.treinaweb.agenda.servlets;
 
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class OlaServlet
+ * Servlet implementation class GetMsgServlet
  */
-@WebServlet("/OlaServlet")
-public class OlaServlet extends HttpServlet {
+@WebServlet("/GetMsgServlet")
+public class GetMsgServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public OlaServlet() {
+    public GetMsgServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +28,8 @@ public class OlaServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/WEB-INF/web-page/formMsg.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -35,7 +37,8 @@ public class OlaServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/WEB-INF/web-page/resultado.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }
