@@ -1,12 +1,14 @@
 package br.com.treinaweb.agenda.fx;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 import br.com.treinaweb.agenda.entidades.Contato;
 import br.com.treinaweb.agenda.repositorios.impl.RepositorioContato;
+import br.com.treinaweb.agenda.repositorios.impl.RepositorioContatoJdbc;
 import br.com.treinaweb.agenda.repositorios.interfaces.RepositorioAgenda;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -115,8 +117,8 @@ public class MainController implements Initializable {
 
 	public void btnDelete_Action() {
 		Alert confirmacao = new Alert(AlertType.CONFIRMATION);
-		confirmacao.setTitle("Confirma√ß√£o");
-		confirmacao.setHeaderText("Confirma√ß√£o da exclus√£o do contato");
+		confirmacao.setTitle("ConfirmaÁ„o");
+		confirmacao.setHeaderText("ConfirmaÁ„o da exclus„o do contato");
 		confirmacao.setContentText("Tem certeza de que deseja excluir este contato?");
 		Optional<ButtonType> resultadoConfirmacao = confirmacao.showAndWait();
 		if (resultadoConfirmacao.isPresent() && resultadoConfirmacao.get() == ButtonType.OK) {
@@ -129,18 +131,18 @@ public class MainController implements Initializable {
 	}
 
 	private void carregarTabelaContato() {
-		RepositorioAgenda<Contato> repositorioContato = new RepositorioContato();
-		List<Contato> contatos = repositorioContato.selecionar();
-		if (contatos.isEmpty()) {
-			Contato contato = new Contato();
-			contato.setNome("Daniel Silva");
-			contato.setIdade(31);
-			contato.setEmail("daniel_dxp@hotmail.com");
-			contato.setTelefone("11983804055");
-			contatos.add(contato);
+		try {
+			RepositorioAgenda<Contato> repositorioContato = new RepositorioContatoJdbc();
+			List<Contato> contatos = repositorioContato.selecionar();
+			ObservableList<Contato> contatosObservableList = FXCollections.observableList(contatos);
+			this.tabelaContatos.getItems().setAll(contatosObservableList);
+		} catch(SQLException e) {
+			Alert mensagem = new Alert(AlertType.ERROR);
+			mensagem.setTitle("ERRO");
+			mensagem.setHeaderText("Erro no banco de dados");
+			mensagem.setContentText("N„o conectado: "+ e.getMessage());
+			mensagem.showAndWait();
 		}
-		ObservableList<Contato> contatosObservableList = FXCollections.observableList(contatos);
-		this.tabelaContatos.getItems().setAll(contatosObservableList);
 	}
 
 	private void habilitarEditAgenda(Boolean isHabilitade) {

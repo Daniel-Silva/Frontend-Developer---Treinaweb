@@ -5,11 +5,38 @@ public class Contato {
 	/**
 	 * Estas são as características do contato
 	 */
+	private int id;
 	private String nome;
 	private String email;
 	private int idade;
 	private String telefone;
 	
+	public Contato() {
+		
+	}
+	
+	public Contato(String nome, String email, int idade, String telefone) {
+		this.nome = nome;
+		this.email = email;
+		this.idade = idade;
+		this.telefone = telefone;
+	}
+	
+	/**
+	 * Este método pega o id do contato
+	 * @return
+	 */
+	public int getId() {
+		return id;
+	}
+	
+	/**
+	 * Este método insere o id a um contato
+	 * @param id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	/**
 	 * Este método pega o nome do contato
