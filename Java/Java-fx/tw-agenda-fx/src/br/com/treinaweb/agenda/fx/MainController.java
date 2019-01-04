@@ -1,7 +1,6 @@
 package br.com.treinaweb.agenda.fx;
 
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -99,20 +98,28 @@ public class MainController implements Initializable {
 	}
 
 	public void btnSave_Action() {
-		RepositorioAgenda<Contato> repositorioContato = new RepositorioContato();
-		Contato contato = new Contato();
-		contato.setNome(txfNome.getText());
-		contato.setIdade(Integer.parseInt(txfIdade.getText()));
-		contato.setEmail(txfEmail.getText());
-		contato.setTelefone(txfTelefone.getText());
-		if (this.isInsert) {
-			repositorioContato.inserir(contato);
-		} else {
-			repositorioContato.atualizar(contato);
+		try {
+			RepositorioAgenda<Contato> repositorioContato = new RepositorioContatoJdbc();
+			Contato contato = new Contato();
+			contato.setNome(txfNome.getText());
+			contato.setIdade(Integer.parseInt(txfIdade.getText()));
+			contato.setEmail(txfEmail.getText());
+			contato.setTelefone(txfTelefone.getText());
+			if (this.isInsert) {
+				repositorioContato.inserir(contato);
+			} else {
+				repositorioContato.atualizar(contato);
+			}
+			habilitarEditAgenda(false);
+			carregarTabelaContato();
+			this.tabelaContatos.getSelectionModel().selectFirst();
+		} catch (Exception e) {
+			Alert mensagem = new Alert(AlertType.ERROR);
+			mensagem.setTitle("ERRO");
+			mensagem.setHeaderText("Erro no banco de dados");
+			mensagem.setContentText("Não conectado: " + e.getMessage());
+			mensagem.showAndWait();
 		}
-		habilitarEditAgenda(false);
-		carregarTabelaContato();
-		this.tabelaContatos.getSelectionModel().selectFirst();
 	}
 
 	public void btnDelete_Action() {
@@ -136,11 +143,11 @@ public class MainController implements Initializable {
 			List<Contato> contatos = repositorioContato.selecionar();
 			ObservableList<Contato> contatosObservableList = FXCollections.observableList(contatos);
 			this.tabelaContatos.getItems().setAll(contatosObservableList);
-		} catch(SQLException e) {
+		} catch (Exception e) {
 			Alert mensagem = new Alert(AlertType.ERROR);
 			mensagem.setTitle("ERRO");
 			mensagem.setHeaderText("Erro no banco de dados");
-			mensagem.setContentText("Não conectado: "+ e.getMessage());
+			mensagem.setContentText("Não conectado: " + e.getMessage());
 			mensagem.showAndWait();
 		}
 	}
